@@ -13,7 +13,8 @@
 <body>
 
     <!-- 메뉴 선택 1 -->
-    <section id="menu1" class="screen active">
+
+    <section id="menu1" class="screen active center">
         <h1>결제하실 메뉴를 선택해주세요</h1>
 
         <div class="card" onclick="selectMenu1('single')">
@@ -29,7 +30,7 @@
     </section>
 
     <!-- 메뉴 선택 2 -->
-    <section id="menu2" class="screen">
+    <section id="menu2" class="screen center">
         <h1>코스메뉴</h1>
         <p class="sub">메뉴를 선택해주세요</p>
 
@@ -56,7 +57,7 @@
     </section>
 
     <!-- 결제 비밀번호 -->
-    <section id="pin" class="screen">
+    <section id="pin" class="screen center">
         <h1>결제 비밀번호를 입력해주세요</h1>
 
         <div class="pin-dots">
@@ -80,7 +81,7 @@
     </section>
 
     <!-- NFC -->
-    <section id="nfc" class="screen">
+    <section id="nfc" class="screen center">
         <h1>카드를 리더기에 갖다대주세요</h1>
 
         <div class="reader"></div>
@@ -90,28 +91,28 @@
     </section>
 
     <!-- 오류 -->
-    <section id="error" class="screen">
+    <section id="error" class="screen center">
         <h1>잘못된 선택입니다</h1>
         <p>다시 올바른 항목을 선택해주세요</p>
         <button onclick="goBack()">돌아가기</button>
     </section>
 
     <!-- 비밀번호 오류 -->
-    <section id="pinError" class="screen">
+    <section id="pinError" class="screen center">
         <h1>비밀번호 오류입니다</h1>
         <p>다시 비밀번호를 입력해주세요</p>
         <button onclick="goBack()">돌아가기</button>
     </section>
 
     <!-- 결제 실패 -->
-    <section id="fail" class="screen">
+    <section id="fail" class="screen center">
         <h1>결제가 실패했습니다</h1>
         <p>다시 시도해주세요</p>
         <button onclick="goBack()">돌아가기</button>
     </section>
 
     <!-- 결제 성공 -->
-    <section id="success" class="screen">
+    <section id="success" class="screen center">
         <h1>이용해주셔서 감사합니다</h1>
         <p>결제가 완료되었습니다</p>
     </section>
