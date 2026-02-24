@@ -70,12 +70,14 @@ body {
 h1 {
     font-size: 20px;
     margin-bottom: 12px;
+	text-align:center;
 }
 
 .sub {
     font-size: 14px;
     color: #6b7280;
     margin-bottom: 16px;
+	text-align:center;
 }
 
 .card {
@@ -94,12 +96,14 @@ h1 {
 .card h2 {
     margin: 0 0 6px;
     font-size: 16px;
+	text-align:center;
 }
 
 .card p {
     margin: 0;
     font-size: 13px;
     color: #6b7280;
+	text-align:center;
 }
 
 .bookmark {
@@ -111,6 +115,7 @@ h1 {
     font-size: 12px;
     padding: 4px 8px;
     border-radius: 8px;
+	text-align:center;
 }
 
 .pin-dots {
@@ -164,6 +169,8 @@ h1 {
     border-radius: 16px;
     padding: 16px;
     color: #fff;
+	text-align:center;
 }
+
 
 
