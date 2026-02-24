@@ -25,6 +25,12 @@ body {
     display: block;
 }
 
+/* ⭐ 핵심: 화면 정가운데 정렬 */
+.screen.center {  align-items: center;     /* 가로 중앙 */  text-align: center;
+}
+
+
+
 @font-face {
 	font-family: 'SUITE';
 	font-weight: 300;
@@ -171,5 +177,6 @@ h1 {
     color: #fff;
 	text-align:center;
 }
+
 
 
