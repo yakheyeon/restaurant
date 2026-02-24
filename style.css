@@ -72,7 +72,11 @@ h1 {
     margin-bottom: 12px;
 	text-align:center;
 }
-
+/* 제목 가운데 */
+.screen h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
 .sub {
     font-size: 14px;
     color: #6b7280;
@@ -80,19 +84,23 @@ h1 {
 	text-align:center;
 }
 
-.card {
-    background: #fff;
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    position: relative;
+.screen {
+  min-height: 100vh;
+  display: none;
+  padding: 24px;
 }
 
-.card.selected {
-    border: 2px solid #2563eb;
+.screen.active {
+  display: flex;
 }
 
+/* ⭐ 핵심: 화면 정가운데 정렬 */
+.screen.center {
+  flex-direction: column;
+  justify-content: center; /* 세로 중앙 */
+  align-items: center;     /* 가로 중앙 */
+  text-align: center;
+}
 .card h2 {
     margin: 0 0 6px;
     font-size: 16px;
@@ -105,7 +113,18 @@ h1 {
     color: #6b7280;
 	text-align:center;
 }
+/* 카드 정렬용 컨테이너 느낌 */
+.card {
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 16px;
+}
 
+/* 카드 안 텍스트 */
+.card h2,
+.card p {
+  text-align: left;
+}
 .bookmark {
     position: absolute;
     top: 12px;
@@ -171,6 +190,7 @@ h1 {
     color: #fff;
 	text-align:center;
 }
+
 
 
 
