@@ -1,6 +1,6 @@
 body{
 margin:0;
-font-family:'SUITE', -apple-system, BlinkMacSystemFont, sans-serif;
+font-family:'SUITE',-apple-system,BlinkMacSystemFont,sans-serif;
 background:#f2f4f7;
 min-height:100vh;
 display:flex;
@@ -45,20 +45,16 @@ margin-bottom:20px;
 .card{
 width:100%;
 background:white;
-
 padding:22px;
 margin-bottom:16px;
-
 border-radius:18px;
-
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
-
 cursor:pointer;
 transition:0.2s;
 }
 
 .card:hover{
-transform:translateY(-2px);
+transform:translateY(-3px);
 }
 
 .card h2{
@@ -78,10 +74,8 @@ color:#666;
 position:absolute;
 right:20px;
 top:18px;
-
 background:#007aff;
 color:white;
-
 padding:4px 10px;
 border-radius:12px;
 font-size:12px;
@@ -96,12 +90,9 @@ margin:30px 0;
 }
 
 .pin-dots span{
-
 width:16px;
 height:16px;
-
 border-radius:50%;
-
 background:#d1d5db;
 }
 
@@ -112,33 +103,47 @@ background:#111;
 /* 키패드 */
 
 .keypad{
-
 width:100%;
 max-width:320px;
-
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:14px;
-
 }
 
 .keypad button{
-
 height:64px;
-
 border:none;
 border-radius:16px;
-
 background:white;
-
 font-size:20px;
 font-weight:600;
-
 box-shadow:0 4px 12px rgba(0,0,0,0.1);
-
 transition:0.15s;
 }
 
 .keypad button:active{
-transform:scale(0.96);
+transform:scale(0.95);
+}
+
+/* 성공 체크 */
+
+.checkmark{
+width:90px;
+height:90px;
+border-radius:50%;
+background:#34c759;
+position:relative;
+margin-bottom:20px;
+}
+
+.checkmark::after{
+content:"";
+position:absolute;
+left:26px;
+top:38px;
+width:30px;
+height:14px;
+border-left:6px solid white;
+border-bottom:6px solid white;
+transform:rotate(-45deg);
 }
