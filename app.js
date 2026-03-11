@@ -1,4 +1,4 @@
-const CORRECT_PIN = "7564"
+const CORRECT_PIN = "1111"
 
 let pin = ""
 let history = []
@@ -9,7 +9,7 @@ document.getElementById(id).classList.add("active")
 }
 
 function move(id){
-const cur = document.querySelector(".screen.active")?.id
+const cur=document.querySelector(".screen.active")?.id
 if(cur) history.push(cur)
 show(id)
 }
@@ -21,24 +21,31 @@ show(history.pop())
 /* 메뉴 */
 
 function selectMenu1(v){
-v === "set" ? move("menu2") : move("error")
+v==="set"?move("menu2"):move("error")
 }
 
 function selectMenu2(v){
-v === "birthday" ? move("pin") : move("error")
+v==="birthday"?move("pin"):move("error")
 }
 
 /* PIN */
 
 function pressKey(n){
+
 if(pin.length>=4) return
-pin += n
+
+navigator.vibrate?.(30)
+
+pin+=n
 updateDots()
+
 }
 
 function deleteKey(){
-pin = pin.slice(0,-1)
+
+pin=pin.slice(0,-1)
 updateDots()
+
 }
 
 function updateDots(){
@@ -49,7 +56,7 @@ dots.forEach((d,i)=>{
 d.classList.toggle("filled",i<pin.length)
 })
 
-document.getElementById("submitBtn").disabled = pin.length!==4
+document.getElementById("submitBtn").disabled=pin.length!==4
 
 }
 
@@ -60,16 +67,16 @@ if(pin===CORRECT_PIN){
 pin=""
 updateDots()
 
+navigator.vibrate?.([40,30,40])
+
 move("success")
 
 }else{
 
 pin=""
 updateDots()
-
 move("pinError")
 
 }
 
 }
-
