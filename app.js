@@ -1,4 +1,4 @@
-const CORRECT_PIN = "1111"
+const CORRECT_PIN = "7564"
 
 let pin = ""
 let history = []
@@ -80,3 +80,4 @@ move("pinError")
 }
 
 }
+
