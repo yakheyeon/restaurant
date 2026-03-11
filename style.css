@@ -1,45 +1,70 @@
 body{
 margin:0;
-font-family:'SUITE',sans-serif;
+font-family:'SUITE', -apple-system, BlinkMacSystemFont, sans-serif;
 background:#f2f4f7;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
 height:100vh;
 }
+
+/* 화면 */
 
 .screen{
 display:none;
 width:100%;
 max-width:420px;
+height:100vh;
+
 padding:30px;
 box-sizing:border-box;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
 text-align:center;
 }
 
 .screen.active{
-display:block;
+display:flex;
 }
+
+/* 제목 */
 
 h1{
 font-size:24px;
+font-weight:700;
 margin-bottom:30px;
 }
 
 .sub{
-margin-top:-15px;
-margin-bottom:20px;
 color:#666;
+margin-bottom:20px;
 }
 
+/* 카드 */
+
 .card{
+width:100%;
 background:white;
-padding:20px;
-margin-bottom:15px;
-border-radius:14px;
-box-shadow:0 4px 10px rgba(0,0,0,0.05);
-position:relative;
+
+padding:22px;
+margin-bottom:16px;
+
+border-radius:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
 cursor:pointer;
+transition:0.2s;
+}
+
+.card:hover{
+transform:translateY(-2px);
 }
 
 .card h2{
@@ -49,56 +74,92 @@ font-size:18px;
 
 .card p{
 margin-top:6px;
-color:#666;
 font-size:14px;
+color:#666;
 }
+
+/* 추천 배지 */
 
 .bookmark{
 position:absolute;
-right:15px;
-top:15px;
-background:#3b82f6;
+right:20px;
+top:18px;
+
+background:#007aff;
 color:white;
-font-size:12px;
+
 padding:4px 10px;
-border-radius:10px;
+border-radius:12px;
+font-size:12px;
 }
 
 /* PIN */
 
 .pin-dots{
 display:flex;
-justify-content:center;
-gap:12px;
+gap:14px;
 margin:30px 0;
 }
 
 .pin-dots span{
-width:14px;
-height:14px;
+
+width:16px;
+height:16px;
+
 border-radius:50%;
-background:#ddd;
+
+background:#d1d5db;
+transition:0.2s;
+
 }
 
 .pin-dots span.filled{
-background:#333;
+background:#111;
 }
 
+/* 키패드 */
+
 .keypad{
+
+width:100%;
+max-width:320px;
+
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:10px;
+gap:14px;
+
+margin-top:10px;
+
 }
 
 .keypad button{
-padding:18px;
-font-size:18px;
+
+height:64px;
+
 border:none;
-border-radius:10px;
+border-radius:16px;
+
 background:white;
-box-shadow:0 3px 6px rgba(0,0,0,0.1);
+
+font-size:20px;
+font-weight:600;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+
+transition:0.15s;
 }
 
-button{
-cursor:pointer;
+.keypad button:active{
+transform:scale(0.96);
+}
+
+/* 완료 화면 */
+
+#success h1{
+font-size:26px;
+}
+
+#success p{
+color:#666;
+margin-top:10px;
 }
