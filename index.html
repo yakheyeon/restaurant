@@ -2,126 +2,119 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>결제 체험</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>결제 체험</title>
 
-    <link rel="manifest" href="manifest.json" />
-    <link rel="stylesheet" href="style.css" />
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- 메뉴 선택 1 -->
+<!-- 메뉴 선택 -->
+<section id="menu1" class="screen active">
+<h1>결제하실 메뉴를 선택해주세요</h1>
 
-    <section id="menu1" class="screen active center">
-        <h1>결제하실 메뉴를 선택해주세요</h1>
+<div class="card" onclick="selectMenu1('single')">
+<h2>단품 메뉴</h2>
+<p>단품 메뉴를 드신 경우 선택해주세요</p>
+</div>
 
-        <div class="card" onclick="selectMenu1('single')">
-            <h2>단품 메뉴</h2>
-            <p>단품 메뉴를 드신 경우 선택해주세요</p>
-        </div>
+<div class="card" onclick="selectMenu1('set')">
+<h2>세트 메뉴</h2>
+<p>세트 메뉴를 드신 경우 선택해주세요</p>
+<span class="bookmark">선택</span>
+</div>
+</section>
 
-        <div class="card" onclick="selectMenu1('set')">
-            <h2>세트 메뉴</h2>
-            <p>세트 메뉴를 드신 경우 선택해주세요</p>
-            <span class="bookmark">선택</span>
-        </div>
-    </section>
+<!-- 세트 메뉴 -->
+<section id="menu2" class="screen">
 
-    <!-- 메뉴 선택 2 -->
-    <section id="menu2" class="screen center">
-        <h1>코스메뉴</h1>
-        <p class="sub">메뉴를 선택해주세요</p>
+<h1>코스메뉴</h1>
+<p class="sub">메뉴를 선택해주세요</p>
 
-        <div class="card" onclick="selectMenu2('couple')">
-            <h2>커플 세트 (2인)</h2>
-            <p>연인을 위한 구성</p>
-        </div>
+<div class="card" onclick="selectMenu2('couple')">
+<h2>커플 세트 (2인)</h2>
+<p>연인을 위한 구성</p>
+</div>
 
-        <div class="card" onclick="selectMenu2('family')">
-            <h2>패밀리 세트 (3~4인)</h2>
-            <p>가족 구성 추천</p>
-        </div>
+<div class="card" onclick="selectMenu2('family')">
+<h2>패밀리 세트 (3~4인)</h2>
+<p>가족 구성 추천</p>
+</div>
 
-        <div class="card" onclick="selectMenu2('birthday')">
-            <h2>생일 세트 (2인)</h2>
-            <p>특별한 날을 위한 선택</p>
-            <span class="bookmark">추천</span>
-        </div>
+<div class="card" onclick="selectMenu2('birthday')">
+<h2>생일 세트 (2인)</h2>
+<p>특별한 날을 위한 선택</p>
+<span class="bookmark">추천</span>
+</div>
 
-        <div class="card" onclick="selectMenu2('solo')">
-            <h2>나혼자 세트 (1인)</h2>
-            <p>혼자 즐기는 구성</p>
-        </div>
-    </section>
+<div class="card" onclick="selectMenu2('solo')">
+<h2>나혼자 세트 (1인)</h2>
+<p>혼자 즐기는 구성</p>
+</div>
 
-    <!-- 결제 비밀번호 -->
-    <section id="pin" class="screen center">
-        <h1>결제 비밀번호를 입력해주세요</h1>
+</section>
 
-        <div class="pin-dots">
-            <span></span><span></span><span></span><span></span>
-        </div>
+<!-- PIN -->
+<section id="pin" class="screen">
 
-        <div class="keypad">
-            <button onclick="pressKey(1)">1</button>
-            <button onclick="pressKey(2)">2</button>
-            <button onclick="pressKey(3)">3</button>
-            <button onclick="pressKey(4)">4</button>
-            <button onclick="pressKey(5)">5</button>
-            <button onclick="pressKey(6)">6</button>
-            <button onclick="pressKey(7)">7</button>
-            <button onclick="pressKey(8)">8</button>
-            <button onclick="pressKey(9)">9</button>
-            <button onclick="deleteKey()">지우기</button>
-            <button onclick="pressKey(0)">0</button>
-            <button id="submitBtn" disabled onclick="submitPin()">입력</button>
-        </div>
-    </section>
+<h1>결제 비밀번호를 입력해주세요</h1>
 
-    <!-- NFC -->
-    <section id="nfc" class="screen center">
-        <h1>카드를 리더기에 갖다대주세요</h1>
+<div class="pin-dots">
+<span></span><span></span><span></span><span></span>
+</div>
 
-        <div class="reader"></div>
-        <div class="card-ui">VISA</div>
+<div class="keypad">
 
-        <p id="nfcText">NFC 인식 대기 중</p>
-    </section>
+<button onclick="pressKey(1)">1</button>
+<button onclick="pressKey(2)">2</button>
+<button onclick="pressKey(3)">3</button>
 
-    <!-- 오류 -->
-    <section id="error" class="screen center">
-        <h1>잘못된 선택입니다</h1>
-        <p>다시 올바른 항목을 선택해주세요</p>
-        <button onclick="goBack()">돌아가기</button>
-    </section>
+<button onclick="pressKey(4)">4</button>
+<button onclick="pressKey(5)">5</button>
+<button onclick="pressKey(6)">6</button>
 
-    <!-- 비밀번호 오류 -->
-    <section id="pinError" class="screen center">
-        <h1>비밀번호 오류입니다</h1>
-        <p>다시 비밀번호를 입력해주세요</p>
-        <button onclick="goBack()">돌아가기</button>
-    </section>
+<button onclick="pressKey(7)">7</button>
+<button onclick="pressKey(8)">8</button>
+<button onclick="pressKey(9)">9</button>
 
-    <!-- 결제 실패 -->
-    <section id="fail" class="screen center">
-        <h1>결제가 실패했습니다</h1>
-        <p>다시 시도해주세요</p>
-        <button onclick="goBack()">돌아가기</button>
-    </section>
+<button onclick="deleteKey()">지우기</button>
+<button onclick="pressKey(0)">0</button>
+<button id="submitBtn" disabled onclick="submitPin()">입력</button>
 
-    <!-- 결제 성공 -->
-    <section id="success" class="screen center">
-        <h1>이용해주셔서 감사합니다</h1>
-        <p>결제가 완료되었습니다</p>
-    </section>
+</div>
 
-    <script src="app.js">
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("service-worker.js");
-        }
-    </script>
+</section>
+
+<!-- 오류 -->
+<section id="error" class="screen">
+<h1>잘못된 선택입니다</h1>
+<p>다시 선택해주세요</p>
+<button onclick="goBack()">돌아가기</button>
+</section>
+
+<!-- PIN 오류 -->
+<section id="pinError" class="screen">
+<h1>비밀번호 오류입니다</h1>
+<p>다시 입력해주세요</p>
+<button onclick="goBack()">돌아가기</button>
+</section>
+
+<!-- 성공 -->
+<section id="success" class="screen">
+<h1>이용해주셔서 감사합니다</h1>
+<p>결제가 완료되었습니다</p>
+</section>
+
+<script src="app.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
 </body>
-
 </html>
